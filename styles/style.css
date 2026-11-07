@@ -1,5 +1,289 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
-.page {
+.page { 
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  font-family: var(--main-font-family);
+  font-size: var(--main-size);
+  background-image: var(--bg-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: var(--bg-color);
+}
+
+.header {
+  position: relative;
+  height: 100vh;
+  min-block-size: 668px;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  padding: var(--main-gap);
+}
+
+.header__theme-menu {
+  justify-self: end;
+  align-self: center;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-gap);
+}
+
+.header__theme-menu-button {
+  color: var(--color-menu);
+  text-transform: lowercase;
+  background-color: transparent;
+  border: none;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--color-menu);
+}
+
+.header__theme-menu-button:hover {
+  border-color: var(--color-menu-hover)
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+  border-bottom: 1px solid var(--color-menu);
+}
+
+.header-title {
+  align-self: center;
+  font-size: var(--title-font-size);
+  font-weight: 700;
+  color: var(--color-title);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  line-height: 83%;
+}
+
+.header-text {
+  align-self: center;
+  justify-self: end;
+  font-weight: 700;
+}
+
+.header-text > span {
+  display: block;
+}
+
+.header-rec {
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  color: var(--color-menu);
+}
+
+.header-rec::after {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  margin-left: 5px;
+  background-color: rgba(255, 0, 112, 1);
+}
+
+.text-decor {
+  font-size: var(--main-size);
+  color: var(--color-text-decor);
+  background-color: var(--bg-color-text-decor);
+}
+
+.decorated-zone::before, 
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+}
+
+.decorated-zone::before {
+  top: 10px;
+  right: 10px;
+  border-top: 1px solid var(--color-menu);
+  border-right: 1px solid var(--color-menu);
+}
+
+.decorated-zone::after {
+  bottom: 10px;
+  left: 10px;
+  border-bottom: 1px solid var(--color-menu);
+  border-left: 1px solid var(--color-menu);
+}
+
+.main-content {
+  display: grid;
+  gap: 50px;
+  padding: 40px 10px;
+  background-color: var(--bg-color);
+}
+
+.content-section, .section-content {
+  display: grid;
+  align-content: start;
+  gap: 20px;
+}
+
+.content-card {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+
+.content-title {
+  font-size: var(--main-size);
+  font-weight: 700;
+  color: var(--color-content-title)
+}
+
+.content-card-text {
+  font-weight: 400;
+  color: var(--color-content-text);
+}
+
+.text-decor-other-font {
+  font-weight: 400; 
+}
+
+.content-text-link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.content-text-link:hover {
+  border-bottom: 1px solid var(--color-content-text);
+}
+
+.content-text-link:focus-visible {
+  outline: 1px solid var(--color-content-text);
+}
+
+.gallery {
+  display: grid;
+  gap: 10px;
+}
+
+.gallery-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
+  min-block-size: 668px;
+  padding: 10px;
+  background-color: var(--bg-color);
+}
+
+.footer-title {
+  font-size: var(--title-font-size);
+  font-weight: 700;
+  color: var(--color-title);
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+@media (width >= 768px) {
+  .header-text {
+    width: 50%;
+  }
+
+  .header-title {
+    margin-left: -20px;
+  }
+
+  .header-rec {
+    top: 20px;
+    right: 28px;
+  }
+
+  .decorated-zone::before {
+    top: 20px;
+    right: 20px;
+  }
+
+  .decorated-zone::after {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .main-content {
+    gap: 80px;
+    padding: 60px 20px;
+  }
+
+  .content-section-columns {
+    grid-template-columns: 1fr 2fr; 
+  }
+
+  .content-section-factors > .content-title {
+    width: calc((100% - 40px) / 3);
+  }
+
+  .gallery {
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "sunset sunset icecream"
+    "tape books icecream"
+    "tape street street";
+  }
+
+  .gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; 
+  }
+
+  .gallery-image-sunset {
+    grid-area: sunset;
+  }
+
+  .gallery-image-icecream {
+    grid-area: icecream;
+  }
+
+  .gallery-image-tape {
+    grid-area: tape;
+  }
+
+  .gallery-image-books {
+    grid-area: books;
+  }
+
+  .gallery-image-street {
+    grid-area: street; 
+  }
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .content-section-columns {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .content-section-columns > .section-content {
+    grid-column: span 2;
+  }
+
+  .factors-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
