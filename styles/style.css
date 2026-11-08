@@ -1,6 +1,6 @@
 .page { 
-  font-family: var(--main-font-family);
   font-size: var(--main-size);
+  font-family: var(--main-font-family);
   line-height: var(--main-line-height);
   background-image: var(--bg-image);
   background-position: center;
