@@ -30,10 +30,15 @@
 }
 
 .header__theme-menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--color-menu);
   text-transform: lowercase;
   background-color: transparent;
   border: none;
+  width: 70px;
+  height: 26px;
 }
 
 .header__theme-menu-button_active {
@@ -161,9 +166,13 @@
   outline: 1px solid var(--color-content-text);
 }
 
+.content-section-gallery {
+  gap: var(--main-gap);
+}
+
 .gallery {
   display: grid;
-  gap: 10px;
+  gap: var(--main-gap);
 }
 
 .gallery-image {
@@ -228,7 +237,6 @@
   }
 
   .gallery {
-    gap: 20px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
     "sunset sunset icecream"
