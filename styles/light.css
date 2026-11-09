@@ -20,3 +20,22 @@
 .theme-light .header-rec {
   display: none;
 }
+
+@media (prefers-color-scheme: light) {
+  :root {
+  --bg-image: url("../images/cover-image-light.png");
+  --bg-color: #fff1f7;
+  --color-title: rgba(255, 194, 230, 1);
+  --accent-color: rgba(255, 141, 203, 1);
+  --bg-color-text-decor: rgba(255, 141, 203, 1);
+  --color-text-decor: rgba(53, 52, 48, 1);
+  --color-menu: rgba(53, 52, 48, 1);
+  --color-menu-hover: rgba(53, 52, 48, 0.4);
+  --color-content-title: rgba(53, 52, 48, 1);
+  --color-content-text: rgba(53, 52, 48, 1);
+  }
+
+  .header-rec {
+  display: none;
+  }
+}
